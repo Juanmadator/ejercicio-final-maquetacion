@@ -12,9 +12,10 @@
 <body>
     
 
-    <header class="header">
+    <header>
+       <div class="header">
         <div class="header__logo">
-            <h1>Fit-Track</h1>
+            <h1><a href="index.html">Fit-Track</a></h1>
         </div>
 
         <button class="btn">
@@ -27,17 +28,41 @@
             <input type="checkbox" id="menu">
             <label for="menu" id="label__menu"><i class="bi bi-list icono-menu"></i></label>
             <ul class="navbar__menu">
-                <li>Home</li>
-                <li>Explorar</li>
-                <li>grupos</li>
-                <li>Favoritos</li>
-                <li>Rutinas</li>
-                <li>Perfil</li>
-                <li>Sobre nosotros</li>
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="explorar.html">Explorar</a></li>
+                <li><a href="registro.html">Registro</a></li>
+                <li><a href="">Información</a></li>
+
+
             </ul>
         </nav>
+       </div>
     </header>
 
+   <div class="global">
+    <div class="anuncios">
+       <div class="anuncios__imagen">
+        <p>Compra nuestro producto</p>
+        <span class="precio-izquierda precio">20€</span>
+       </div>
+
+       <div class="anuncios__imagen">
+        <p>Compra nuestro producto</p>
+        <span class="precio-izquierda precio">20€</span>
+       </div>
+
+       <div class="anuncios__imagen">
+        <p>Compra nuestro producto</p>
+        <span class="precio-izquierda precio">20€</span>
+       </div>
+
+       <div class="anuncios__imagen">
+        <p>Compra nuestro producto</p>
+        <span class="precio-izquierda precio">20€</span>
+       </div>
+      
+
+    </div>
     <section class="contenido">
         <div class="contenido__publicacion">
             <span class="publicacion__icono"><i class="bi bi-upload" id="publicacion__icono"></i></span>
@@ -92,7 +117,7 @@
                 </div>
             </div>
             <div class="post__contenido">
-               <img src="https://picsum.photos/400" class="post__contenido-imagen" alt="">
+               <img src="https://picsum.photos/400" class="post__contenido-imagen" alt="Imagen de la publicacion">
             </div>
             <div class="post__corazon"><span><i class="bi bi-heart"></i></span></div>
             <div><span>Ver comentarios</span></div>
@@ -143,18 +168,32 @@
                 </div>
             </div>
             <div class="post__contenido">
-               <img src="https://picsum.photos/400" class="post__contenido-imagen" alt="">
+               <img src="https://picsum.photos/400" class="post__contenido-imagen" alt="Imagen de la publicacion">
             </div>
             <div class="post__corazon"><span><i class="bi bi-heart"></i></span></div>
             <div><span>Ver comentarios</span></div>
         </div>
        </div>
     </section>
+    <div class="anuncios">
+        <div class="anuncios__imagen">
+         <p>Compra nuestro producto</p>
+         <span class="precio-derecha precio">20€</span>
+        </div> 
+       
+ 
+     </div>
+
+   </div>
     <a href="#">
         <div class="flechaSubir">
             <i class="bi bi-arrow-up"></i>
        </div>
     </a>
 
+
+    <footer class="footer">
+        <p>2025@Juanmadator Copyright Evolve Academy</p>
+    </footer>
 </body>
 </html>

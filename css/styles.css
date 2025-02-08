@@ -30,13 +30,24 @@ body {
 
 /* COMIENZO MENU Y HEADER */
 
-.header {
+header{
+  position: fixed;
+  top: 0;
+  width: 100%;
   background-color: var(--blanco);
+
+  box-shadow: 5px 2px 5px var(--grisClaro);
+z-index: 100;
+}
+
+.header {
   display: flex;
   padding: 20px;
   justify-content: space-around;
   align-items: center;
-  box-shadow: 5px 2px 5px var(--grisClaro);
+  width: 100%;
+  top: 0;
+  z-index: 20;
 }
 
 h1 {
@@ -44,13 +55,39 @@ h1 {
   font-weight: 400;
 }
 
+h1 a {
+  text-decoration: none;
+  color: black;
+}
+
 /* Oculto el checkbox que activa el menu */
 #menu {
   display: none;
+  transition: 0.5s all;
+  width: 0%;
 }
 
 .navbar__menu {
-  display: none;
+  position: fixed;
+  display: block;
+  background-color: var(--blanco);
+  z-index: 10;
+  width: 0;
+  height: 100dvh;
+  top: 80px;
+  right: 0;
+  text-align: center;
+  animation: none;
+
+  /* se que no lo hemos visto pero también se que se puede usar */
+  /* & se refiere al propio navbar__menu en este caso */
+  & > li {
+    padding: 42px;
+  }
+}
+
+li {
+  list-style: none;
 }
 
 .idioma {
@@ -74,12 +111,60 @@ h1 {
 
 .navbar {
   align-items: center;
+  
+}
+
+.navbar__menu{
+  background-color: var(--fondoIntenso);
+}
+
+.navbar__menu li {
+  margin-bottom: 1px;
+  border-bottom: 2px solid var(--blanco);
+}
+
+.navbar__menu li a {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar__menu li.active a {
+  color: var(--morado);
 }
 
 /* cuando el checkbox está marcado , selecciono al `hermano` */
 #menu:checked ~ #label__menu {
   animation: menuRotacion 0.3s forwards;
   transition: transform 0.3s linear;
+}
+
+#menu:checked ~ .navbar__menu {
+  animation: mostrarMenu 0.5s ease both;
+}
+
+/* Animación para ocultar el menú */
+#menu:not(:checked) ~ .navbar__menu {
+  animation: ocultarMenu 0.5s ease forwards;
+}
+
+/* para mostrar el menú */
+@keyframes mostrarMenu {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100vw;
+  }
+}
+
+/* para ocultar el menú */
+@keyframes ocultarMenu {
+  0% {
+    width: 100vw;
+  }
+  100% {
+    width: 0%;
+  }
 }
 
 #menu:not(checked) ~ #label__menu {
@@ -133,8 +218,8 @@ h1 {
   transition: 0.3s all ease;
 }
 
-.btn:hover{
-    cursor: pointer;
+.btn:hover {
+  cursor: pointer;
 }
 
 .btn:active {
@@ -145,6 +230,10 @@ h1 {
 
 /* COMIENZO CONTENIDO */
 
+.contenido {
+  margin-top: 100px;
+}
+
 .contenido__publicacion {
   display: flex;
   align-items: center;
@@ -154,7 +243,6 @@ h1 {
   border-radius: 10px;
   max-width: 90%;
   margin: auto;
-  margin-top: 30px;
   padding: 10px;
 }
 .publicacion__input {
@@ -226,7 +314,20 @@ h1 {
 
 /* FIN SECTION CONTENIDO */
 
-/* Aqui creo una flecha con position fixed para que se mantenga fija siempre en mi página  */
+
+/* FOOTER */
+
+.footer{
+  display: none;
+  text-align: center;
+  font-size: 0.8rem;
+  background-color: var(--moradoPulsado);
+  padding: 18px;
+  color: var(--blanco);
+}
+/* FIN FOOTER */
+
+/* CREACION DE UNA FLECHA PARA SCROLLEAR ARRIBA DEL TODO */
 .flechaSubir {
   display: inline-block;
   position: fixed;
@@ -236,10 +337,261 @@ h1 {
   padding: 11px 20px 20px 20px;
   background-color: var(--morado);
   color: var(--blanco);
+  z-index: 10;
 }
 
 .flechaSubir a {
   text-decoration: none;
   color: var(--blanco);
   display: inline-block;
+}
+
+
+.global{
+  display: grid;
+}
+.anuncios{
+  display: none;
+}
+
+/* FIN DE CREACION DE LA FLECHA */
+
+
+/* COMIENZO DE ESTILOS EXPLORAR.HTML */
+.contenido__buscar {
+  justify-content: space-between;
+}
+
+.contenido__buscar .publicacion__input {
+  max-width: 300px;
+  margin-left: 20px;
+}
+.contenido__buscar .buscar {
+  margin-right: 20px;
+}
+
+.grupos {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.grupos__grupo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  z-index: 1;
+  background-color: var(--blanco);
+}
+.grupos__imagen {
+  background-image: linear-gradient(rgba(82, 81, 81, 0.2), #494848),
+    url("https://picsum.photos/400"); /* Cambia la URL aquí */
+  background-position: center;
+  background-size: cover; /* Asegúrate de que la imagen cubra el contenedor */
+  height: 180px;
+  width: 100%;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+/* antes que nada perdon por usar anidacion de esta manera por no haberla visto pero quería practicarlo porque apenas lo he usadoa */
+.grupos__contenido {
+  /* asi selecciono todos los hijos del grupos__contenido */
+  & > * {
+    padding: 10px;
+  }
+
+  & .grupos__titulo {
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
+
+  & .grupos__usuario {
+    margin: 20px 0;
+    font-weight: bold;
+    color: var(--morado);
+  }
+
+  & .grupo__btn {
+    width: 100%;
+    background-color: var(--morado);
+    color: var(--blanco);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    text-align: center;
+    transition: 0.5s all ease;
+
+    & a {
+      text-decoration: none;
+      color: var(--blanco);
+    }
+
+    &:hover {
+      background-color: var(--fondoIntenso);
+    }
+    &:hover a {
+      transition: 0.3s all ease;
+      color: var(--moradoPulsado);
+      cursor: pointer;
+    }
+  }
+}
+
+
+
+
+/* COMIENZO DE MEDIA QUERIES PARA EL INDEX */
+
+@media screen and (min-width: 768px) {
+  #label__menu {
+    display: none;
+  }
+
+  .header{
+    max-width: 1000px;
+    margin:  auto;
+  }
+  
+  .navbar__menu {
+    position: inherit;
+    height: auto;
+    display: flex;
+    background-color: transparent;
+    gap: 20px;
+
+    flex-grow: 1;
+    & li{
+      background-color: transparent;
+      font-size: 1rem;
+      padding: 10px;
+    }
+
+    & li.active a {
+      background-color:transparent;
+    }
+  }
+
+  /* aquí cambio el orden del boton al último porque como no le aplico order a los otros elementos del flexbox
+  pues básicamente lo mando al final */
+  .btn{
+    
+    order: 3;
+  }
+  .idioma{
+    flex-grow: 0.1;
+    order: 2;
+  }
+
+  .contenido__publicacion{
+    max-width: 80%;
+    & .publicacion__input{
+      max-width: 300px;
+    }
+  }
+
+  .posts{
+    margin: auto;
+    display: grid;
+  }
+
+  .post{
+    width: 80%;
+
+
+    & .post__contenido{
+      justify-self: center;
+    }
+  }
+
+  
+
+
+
+  /* MEDIA QUERIES PARA EXPLORAR.HTML */
+
+  .grupos{
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+  }
+
+ 
+
+  .publicacion__input{
+    padding: 10px;
+    flex-grow: 1;
+  }
+  .contenido__buscar{
+    justify-content: center;
+    max-width: 600px;
+  }
+
+  /* mostramos el footer */
+  .footer{
+    display: block;
+  }
+ 
+}
+
+@media screen and (min-width:1024px) {
+  .global{
+    grid-template-columns: minmax(200px,400px) 4fr minmax(200px,400px);
+  }
+  .anuncios{
+    margin: 100px auto;
+    display: block;
+  }
+
+  .anuncios__imagen{
+    background-image:  linear-gradient(rgba(82, 81, 81, 0.2), rgba(15, 15, 15, 0.6)),url('https://picsum.photos/400');
+    background-position: center;
+    height: 300px;
+  width: 200px;
+  max-width: 400px;
+    background-size: cover;
+    position: relative;
+    margin: 20px;
+  }
+  .anuncios__imagen p{
+    position: absolute;
+    bottom: 0;
+    color: white;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .anuncios__imagen .precio{
+    position: absolute;
+
+    color: white;
+    padding: 8px 5px;
+    background-color: rgb(112, 1, 1);
+    border-radius: 50%;
+  }
+
+.precio-izquierda{
+    right: -25px;
+    top: -10px;
+  }
+
+  .precio-derecha{
+    left: -25px;
+    bottom: -10px;
+  }
+
+  .grupos{
+    max-width: 1600px;
+    grid-template-columns: repeat(4,minmax(220px,1fr));
+  }
+
+  .grupos .grupos__grupo:nth-child(5){
+    grid-area: 3/3/3/2;
+  }
+  .grupos .grupos__grupo:nth-child(9){
+    grid-area: 3/4/3/3;
+  }
 }
