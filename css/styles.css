@@ -28,16 +28,25 @@ body {
   background-color: var(--fondo);
 }
 
+a {
+  display: block;
+  cursor: pointer;
+}
+
+.body {
+  position: relative;
+  min-height: 100dvh;
+}
+
 /* COMIENZO MENU Y HEADER */
 
-header{
+header {
   position: fixed;
   top: 0;
   width: 100%;
   background-color: var(--blanco);
-
   box-shadow: 5px 2px 5px var(--grisClaro);
-z-index: 100;
+  z-index: 100;
 }
 
 .header {
@@ -111,10 +120,9 @@ li {
 
 .navbar {
   align-items: center;
-  
 }
 
-.navbar__menu{
+.navbar__menu {
   background-color: var(--fondoIntenso);
 }
 
@@ -139,7 +147,7 @@ li {
 }
 
 #menu:checked ~ .navbar__menu {
-  animation: mostrarMenu 0.5s ease both;
+  animation: mostrarMenu 0.5s ease forwards;
 }
 
 /* Animación para ocultar el menú */
@@ -244,6 +252,7 @@ li {
   max-width: 90%;
   margin: auto;
   padding: 10px;
+  border: 2px solid rgb(122, 79, 161, 0.2);
 }
 .publicacion__input {
   outline: none;
@@ -277,6 +286,12 @@ li {
   background-color: var(--blanco);
   border-radius: 12px;
   padding: 10px;
+}
+
+.post {
+  & .post__contenido {
+    justify-self: center;
+  }
 }
 
 .post__flex:first-child {
@@ -314,16 +329,18 @@ li {
 
 /* FIN SECTION CONTENIDO */
 
-
 /* FOOTER */
 
-.footer{
+.footer {
   display: none;
   text-align: center;
   font-size: 0.8rem;
   background-color: var(--moradoPulsado);
   padding: 18px;
   color: var(--blanco);
+  position: relative;
+  width: 100%;
+  bottom: 0;
 }
 /* FIN FOOTER */
 
@@ -346,16 +363,14 @@ li {
   display: inline-block;
 }
 
-
-.global{
+.global {
   display: grid;
 }
-.anuncios{
+.anuncios {
   display: none;
 }
 
 /* FIN DE CREACION DE LA FLECHA */
-
 
 /* COMIENZO DE ESTILOS EXPLORAR.HTML */
 .contenido__buscar {
@@ -442,8 +457,88 @@ li {
   }
 }
 
+/* FIN DE EXPLORAR.HTML */
 
+/* COMIENZO DE REGISTRO.HTML */
 
+.form__titulo {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: white;
+  text-shadow: 3px 3px 1px black;
+}
+
+.formulario {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  color: rgb(29, 8, 63);
+}
+
+.form {
+  max-width: 90%;
+  margin: 100px auto;
+  background: linear-gradient(50deg, var(--morado), var(--fondoIntenso));
+
+  border-radius: 10px;
+}
+
+.formulario__input {
+  display: flex;
+  flex-direction: column;
+
+  & input {
+    padding: 6px;
+    border: 2px solid rgb(184, 185, 190, 0.5);
+    border-radius: 8px;
+    outline: none;
+    background-color: var(--fondoIntenso);
+  }
+
+  & label {
+    font-size: 0.9rem;
+    color: black;
+    margin: 10px 0;
+  }
+}
+
+.formulario__input:nth-child(5) {
+  gap: 20px;
+  align-items: center;
+  flex-direction: row;
+}
+
+.passwordInput {
+  position: relative;
+}
+
+.ojo-visible {
+  display: none;
+}
+
+.ojo-oculto,
+.ojo-visible {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+}
+
+.btn-enviar {
+  margin: 0 auto;
+  max-width: 250px;
+  margin-top: 20px;
+  border-radius: 6px;
+  transition: 0.3s all ease;
+  font-size: 0.9rem;
+  border: 2px solid var(--fondoIntenso);
+}
+
+.btn-enviar:active {
+  background-color: #917ee0;
+}
 
 /* COMIENZO DE MEDIA QUERIES PARA EL INDEX */
 
@@ -452,11 +547,11 @@ li {
     display: none;
   }
 
-  .header{
+  .header {
     max-width: 1000px;
-    margin:  auto;
+    margin: auto;
   }
-  
+
   .navbar__menu {
     position: inherit;
     height: auto;
@@ -465,97 +560,96 @@ li {
     gap: 20px;
 
     flex-grow: 1;
-    & li{
+    & li {
       background-color: transparent;
       font-size: 1rem;
       padding: 10px;
     }
 
     & li.active a {
-      background-color:transparent;
+      background-color: transparent;
     }
   }
 
   /* aquí cambio el orden del boton al último porque como no le aplico order a los otros elementos del flexbox
   pues básicamente lo mando al final */
-  .btn{
-    
+  .btn {
     order: 3;
   }
-  .idioma{
+  .idioma {
     flex-grow: 0.1;
     order: 2;
   }
 
-  .contenido__publicacion{
+  .contenido__publicacion {
     max-width: 80%;
-    & .publicacion__input{
+    & .publicacion__input {
       max-width: 300px;
     }
   }
 
-  .posts{
+  .posts {
     margin: auto;
     display: grid;
   }
 
-  .post{
+  .post {
     width: 80%;
 
-
-    & .post__contenido{
+    & .post__contenido {
       justify-self: center;
     }
   }
 
-  
-
-
-
   /* MEDIA QUERIES PARA EXPLORAR.HTML */
 
-  .grupos{
-    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+  .grupos {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
 
- 
-
-  .publicacion__input{
+  .publicacion__input {
     padding: 10px;
     flex-grow: 1;
   }
-  .contenido__buscar{
+  .contenido__buscar {
     justify-content: center;
     max-width: 600px;
   }
 
   /* mostramos el footer */
-  .footer{
+  .footer {
     display: block;
   }
- 
+
+  .form {
+    max-width: 600px;
+  }
 }
 
-@media screen and (min-width:1024px) {
-  .global{
-    grid-template-columns: minmax(200px,400px) 4fr minmax(200px,400px);
+@media screen and (min-width: 1024px) {
+  .global {
+    grid-template-columns: minmax(200px, 400px) 4fr minmax(200px, 400px);
   }
-  .anuncios{
+  .anuncios {
     margin: 100px auto;
     display: block;
   }
 
-  .anuncios__imagen{
-    background-image:  linear-gradient(rgba(82, 81, 81, 0.2), rgba(15, 15, 15, 0.6)),url('https://picsum.photos/400');
+  .anuncios__imagen {
+    background-image: linear-gradient(
+        rgba(82, 81, 81, 0.2),
+        rgba(15, 15, 15, 0.6)
+      ),
+      url("https://picsum.photos/400");
     background-position: center;
     height: 300px;
-  width: 200px;
-  max-width: 400px;
+    width: 200px;
+    max-width: 400px;
     background-size: cover;
     position: relative;
     margin: 20px;
   }
-  .anuncios__imagen p{
+  .anuncios__imagen p {
     position: absolute;
     bottom: 0;
     color: white;
@@ -564,7 +658,7 @@ li {
     padding: 10px;
   }
 
-  .anuncios__imagen .precio{
+  .anuncios__imagen .precio {
     position: absolute;
 
     color: white;
@@ -573,25 +667,25 @@ li {
     border-radius: 50%;
   }
 
-.precio-izquierda{
+  .precio-izquierda {
     right: -25px;
     top: -10px;
   }
 
-  .precio-derecha{
+  .precio-derecha {
     left: -25px;
     bottom: -10px;
   }
 
-  .grupos{
+  .grupos {
     max-width: 1600px;
-    grid-template-columns: repeat(4,minmax(220px,1fr));
+    grid-template-columns: repeat(4, minmax(220px, 1fr));
   }
 
-  .grupos .grupos__grupo:nth-child(5){
+  .grupos .grupos__grupo:nth-child(5) {
     grid-area: 3/3/3/2;
   }
-  .grupos .grupos__grupo:nth-child(9){
+  .grupos .grupos__grupo:nth-child(9) {
     grid-area: 3/4/3/3;
   }
 }

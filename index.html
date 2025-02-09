@@ -10,190 +10,193 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 <body>
-    
+   <div class="body">
+     
 
     <header>
-       <div class="header">
-        <div class="header__logo">
-            <h1><a href="index.html">Fit-Track</a></h1>
+        <div class="header">
+         <div class="header__logo">
+             <h1><a href="index.html">Fit-Track</a></h1>
+         </div>
+ 
+         <button class="btn">
+          <span>+</span>
+         </button>
+         <div class="idioma">
+             <img src="language.png" alt="Cambiar idioma" class="idioma_img">
+         </div>
+         <nav class="navbar">
+             <input type="checkbox" id="menu">
+             <label for="menu" id="label__menu"><i class="bi bi-list icono-menu"></i></label>
+             <ul class="navbar__menu">
+                 <li class="active"><a href="index.html">Home</a></li>
+                 <li><a href="explorar.html">Explorar</a></li>
+                 <li><a href="registro.html">Registro</a></li>
+                 <li><a href="">Información</a></li>
+ 
+ 
+             </ul>
+         </nav>
         </div>
-
-        <button class="btn">
-         <span>+</span>
-        </button>
-        <div class="idioma">
-            <img src="language.png" alt="Cambiar idioma" class="idioma_img">
-        </div>
-        <nav class="navbar">
-            <input type="checkbox" id="menu">
-            <label for="menu" id="label__menu"><i class="bi bi-list icono-menu"></i></label>
-            <ul class="navbar__menu">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="explorar.html">Explorar</a></li>
-                <li><a href="registro.html">Registro</a></li>
-                <li><a href="">Información</a></li>
-
-
-            </ul>
-        </nav>
-       </div>
-    </header>
-
-   <div class="global">
-    <div class="anuncios">
-       <div class="anuncios__imagen">
-        <p>Compra nuestro producto</p>
-        <span class="precio-izquierda precio">20€</span>
-       </div>
-
-       <div class="anuncios__imagen">
-        <p>Compra nuestro producto</p>
-        <span class="precio-izquierda precio">20€</span>
-       </div>
-
-       <div class="anuncios__imagen">
-        <p>Compra nuestro producto</p>
-        <span class="precio-izquierda precio">20€</span>
-       </div>
-
-       <div class="anuncios__imagen">
-        <p>Compra nuestro producto</p>
-        <span class="precio-izquierda precio">20€</span>
-       </div>
-      
-
-    </div>
-    <section class="contenido">
-        <div class="contenido__publicacion">
-            <span class="publicacion__icono"><i class="bi bi-upload" id="publicacion__icono"></i></span>
-            <input type="text" class="publicacion__input" placeholder="¿Quieres publicar?">
-            <button class="btn publicacion__boton">Publicar</button>
-        </div>
-
-       <div class="posts">
-
-        <div class="post">
-            <div class="post__flex">
-                <div class="usuarioFoto"><img src="juanma.JPG" alt="Imagen de perfil del usuario" class="usuarioFoto__img"></div>
-                <div class="post__usuario">
-                    <p>Juanmadator</p>
-                </div>
-                <div class="post__configuracion">
-                    <i class="bi bi-three-dots-vertical"></i>
-                </div>
-            </div>
-            <div class="post__contenido">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque autem minima vitae odit hic possimus. Fugit ut natus eos reiciendis consectetur, aspernatur doloremque ex ab, quia quam hic! Quidem, numquam?
-            </div>
-            <div class="post__corazon"><span><i class="bi bi-heart"></i></span></div>
-            <div><span>Ver comentarios</span></div>
-        </div>
-
-        <div class="post">
-            <div class="post__flex">
-                <div class="usuarioFoto"><img src="juanma.JPG" alt="Imagen de perfil del usuario" class="usuarioFoto__img"></div>
-                <div class="post__usuario">
-                    <p>Juanmadator</p>
-                </div>
-                <div class="post__configuracion">
-                    <i class="bi bi-three-dots-vertical"></i>
-                </div>
-            </div>
-            <div class="post__contenido">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque autem minima vitae odit hic possimus. Fugit ut natus eos reiciendis consectetur, aspernatur doloremque ex ab, quia quam hic! Quidem, numquam?
-            </div>
-            <div class="post__corazon"><span><i class="bi bi-heart"></i></span></div>
-            <div><span>Ver comentarios</span></div>
-        </div>
-
-        <div class="post">
-            <div class="post__flex">
-                <div class="usuarioFoto"><img src="juanma.JPG" alt="Imagen de perfil del usuario" class="usuarioFoto__img"></div>
-                <div class="post__usuario">
-                    <p>Juanmadator</p>
-                </div>
-                <div class="post__configuracion">
-                    <i class="bi bi-three-dots-vertical"></i>
-                </div>
-            </div>
-            <div class="post__contenido">
-               <img src="https://picsum.photos/400" class="post__contenido-imagen" alt="Imagen de la publicacion">
-            </div>
-            <div class="post__corazon"><span><i class="bi bi-heart"></i></span></div>
-            <div><span>Ver comentarios</span></div>
-        </div>
-
-        <div class="post">
-            <div class="post__flex">
-                <div class="usuarioFoto"><img src="juanma.JPG" alt="Imagen de perfil del usuario" class="usuarioFoto__img"></div>
-                <div class="post__usuario">
-                    <p>Juanmadator</p>
-                </div>
-                <div class="post__configuracion">
-                    <i class="bi bi-three-dots-vertical"></i>
-                </div>
-            </div>
-            <div class="post__contenido">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque autem minima vitae odit hic possimus. Fugit ut natus eos reiciendis consectetur, aspernatur doloremque ex ab, quia quam hic! Quidem, numquam?
-            </div>
-            <div class="post__corazon"><span><i class="bi bi-heart"></i></span></div>
-            <div><span>Ver comentarios</span></div>
-        </div>
-
-        <div class="post">
-            <div class="post__flex">
-                <div class="usuarioFoto"><img src="juanma.JPG" alt="Imagen de perfil del usuario" class="usuarioFoto__img"></div>
-                <div class="post__usuario">
-                    <p>Juanmadator</p>
-                </div>
-                <div class="post__configuracion">
-                    <i class="bi bi-three-dots-vertical"></i>
-                </div>
-            </div>
-            <div class="post__contenido">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque autem minima vitae odit hic possimus. Fugit ut natus eos reiciendis consectetur, aspernatur doloremque ex ab, quia quam hic! Quidem, numquam?
-            </div>
-            <div class="post__corazon"><span><i class="bi bi-heart"></i></span></div>
-            <div><span>Ver comentarios</span></div>
-        </div>
-
-        <div class="post">
-            <div class="post__flex">
-                <div class="usuarioFoto"><img src="juanma.JPG" alt="Imagen de perfil del usuario" class="usuarioFoto__img"></div>
-                <div class="post__usuario">
-                    <p>Juanmadator</p>
-                </div>
-                <div class="post__configuracion">
-                    <i class="bi bi-three-dots-vertical"></i>
-                </div>
-            </div>
-            <div class="post__contenido">
-               <img src="https://picsum.photos/400" class="post__contenido-imagen" alt="Imagen de la publicacion">
-            </div>
-            <div class="post__corazon"><span><i class="bi bi-heart"></i></span></div>
-            <div><span>Ver comentarios</span></div>
-        </div>
-       </div>
-    </section>
-    <div class="anuncios">
+     </header>
+ 
+    <div class="global">
+     <div class="anuncios">
         <div class="anuncios__imagen">
          <p>Compra nuestro producto</p>
-         <span class="precio-derecha precio">20€</span>
-        </div> 
+         <span class="precio-izquierda precio">20€</span>
+        </div>
+ 
+        <div class="anuncios__imagen">
+         <p>Compra nuestro producto</p>
+         <span class="precio-izquierda precio">20€</span>
+        </div>
+ 
+        <div class="anuncios__imagen">
+         <p>Compra nuestro producto</p>
+         <span class="precio-izquierda precio">20€</span>
+        </div>
+ 
+        <div class="anuncios__imagen">
+         <p>Compra nuestro producto</p>
+         <span class="precio-izquierda precio">20€</span>
+        </div>
        
  
      </div>
-
+     <section class="contenido">
+         <div class="contenido__publicacion">
+             <span class="publicacion__icono"><i class="bi bi-upload" id="publicacion__icono"></i></span>
+             <input type="text" class="publicacion__input" placeholder="¿Quieres publicar?">
+             <button class="btn publicacion__boton">Publicar</button>
+         </div>
+ 
+        <div class="posts">
+ 
+         <div class="post">
+             <div class="post__flex">
+                 <div class="usuarioFoto"><img src="juanma.JPG" alt="Imagen de perfil del usuario" class="usuarioFoto__img"></div>
+                 <div class="post__usuario">
+                     <p>Juanmadator</p>
+                 </div>
+                 <div class="post__configuracion">
+                     <i class="bi bi-three-dots-vertical"></i>
+                 </div>
+             </div>
+             <div class="post__contenido">
+                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque autem minima vitae odit hic possimus. Fugit ut natus eos reiciendis consectetur, aspernatur doloremque ex ab, quia quam hic! Quidem, numquam?
+             </div>
+             <div class="post__corazon"><span><i class="bi bi-heart"></i></span></div>
+             <div><span>Ver comentarios</span></div>
+         </div>
+ 
+         <div class="post">
+             <div class="post__flex">
+                 <div class="usuarioFoto"><img src="juanma.JPG" alt="Imagen de perfil del usuario" class="usuarioFoto__img"></div>
+                 <div class="post__usuario">
+                     <p>Juanmadator</p>
+                 </div>
+                 <div class="post__configuracion">
+                     <i class="bi bi-three-dots-vertical"></i>
+                 </div>
+             </div>
+             <div class="post__contenido">
+                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque autem minima vitae odit hic possimus. Fugit ut natus eos reiciendis consectetur, aspernatur doloremque ex ab, quia quam hic! Quidem, numquam?
+             </div>
+             <div class="post__corazon"><span><i class="bi bi-heart"></i></span></div>
+             <div><span>Ver comentarios</span></div>
+         </div>
+ 
+         <div class="post">
+             <div class="post__flex">
+                 <div class="usuarioFoto"><img src="juanma.JPG" alt="Imagen de perfil del usuario" class="usuarioFoto__img"></div>
+                 <div class="post__usuario">
+                     <p>Juanmadator</p>
+                 </div>
+                 <div class="post__configuracion">
+                     <i class="bi bi-three-dots-vertical"></i>
+                 </div>
+             </div>
+             <div class="post__contenido">
+                <img src="https://picsum.photos/400" class="post__contenido-imagen" alt="Imagen de la publicacion">
+             </div>
+             <div class="post__corazon"><span><i class="bi bi-heart"></i></span></div>
+             <div><span>Ver comentarios</span></div>
+         </div>
+ 
+         <div class="post">
+             <div class="post__flex">
+                 <div class="usuarioFoto"><img src="juanma.JPG" alt="Imagen de perfil del usuario" class="usuarioFoto__img"></div>
+                 <div class="post__usuario">
+                     <p>Juanmadator</p>
+                 </div>
+                 <div class="post__configuracion">
+                     <i class="bi bi-three-dots-vertical"></i>
+                 </div>
+             </div>
+             <div class="post__contenido">
+                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque autem minima vitae odit hic possimus. Fugit ut natus eos reiciendis consectetur, aspernatur doloremque ex ab, quia quam hic! Quidem, numquam?
+             </div>
+             <div class="post__corazon"><span><i class="bi bi-heart"></i></span></div>
+             <div><span>Ver comentarios</span></div>
+         </div>
+ 
+         <div class="post">
+             <div class="post__flex">
+                 <div class="usuarioFoto"><img src="juanma.JPG" alt="Imagen de perfil del usuario" class="usuarioFoto__img"></div>
+                 <div class="post__usuario">
+                     <p>Juanmadator</p>
+                 </div>
+                 <div class="post__configuracion">
+                     <i class="bi bi-three-dots-vertical"></i>
+                 </div>
+             </div>
+             <div class="post__contenido">
+                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque autem minima vitae odit hic possimus. Fugit ut natus eos reiciendis consectetur, aspernatur doloremque ex ab, quia quam hic! Quidem, numquam?
+             </div>
+             <div class="post__corazon"><span><i class="bi bi-heart"></i></span></div>
+             <div><span>Ver comentarios</span></div>
+         </div>
+ 
+         <div class="post">
+             <div class="post__flex">
+                 <div class="usuarioFoto"><img src="juanma.JPG" alt="Imagen de perfil del usuario" class="usuarioFoto__img"></div>
+                 <div class="post__usuario">
+                     <p>Juanmadator</p>
+                 </div>
+                 <div class="post__configuracion">
+                     <i class="bi bi-three-dots-vertical"></i>
+                 </div>
+             </div>
+             <div class="post__contenido">
+                <img src="https://picsum.photos/400" class="post__contenido-imagen" alt="Imagen de la publicacion">
+             </div>
+             <div class="post__corazon"><span><i class="bi bi-heart"></i></span></div>
+             <div><span>Ver comentarios</span></div>
+         </div>
+        </div>
+     </section>
+     <div class="anuncios">
+         <div class="anuncios__imagen">
+          <p>Compra nuestro producto</p>
+          <span class="precio-derecha precio">20€</span>
+         </div> 
+        
+  
+      </div>
+ 
+    </div>
+     <a href="#">
+         <div class="flechaSubir">
+             <i class="bi bi-arrow-up"></i>
+        </div>
+     </a>
+ 
+ 
+   
    </div>
-    <a href="#">
-        <div class="flechaSubir">
-            <i class="bi bi-arrow-up"></i>
-       </div>
-    </a>
-
-
-    <footer class="footer">
-        <p>2025@Juanmadator Copyright Evolve Academy</p>
-    </footer>
+   <footer class="footer">
+    <p>2025@Juanmadator Copyright Evolve Academy</p>
+</footer>
 </body>
 </html>
