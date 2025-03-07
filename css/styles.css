@@ -5,7 +5,6 @@
 :root {
   --fondo: #f0eef6;
   --fondoIntenso: #d6ccf5;
-
   --blanco: #fff;
   --morado: #7e63e9;
   --moradoPulsado: #917ee0;
@@ -81,18 +80,18 @@ h1 a {
   display: block;
   background-color: var(--blanco);
   z-index: 10;
-  width: 0;
+  width: 0%;
   height: 100dvh;
   top: 80px;
   right: 0;
   text-align: center;
-  animation: none;
 
-  /* se que no lo hemos visto pero también se que se puede usar */
-  /* & se refiere al propio navbar__menu en este caso */
-  & > li {
-    padding: 42px;
-  }
+  
+}
+
+.navbar__menu li{
+  padding: 42px;
+
 }
 
 li {
@@ -152,6 +151,7 @@ li {
 
 /* Animación para ocultar el menú */
 #menu:not(:checked) ~ .navbar__menu {
+  width: 0%;
   animation: ocultarMenu 0.5s ease forwards;
 }
 
@@ -288,10 +288,8 @@ li {
   padding: 10px;
 }
 
-.post {
-  & .post__contenido {
+.post .post__contenido{
     justify-self: center;
-  }
 }
 
 .post__flex:first-child {
