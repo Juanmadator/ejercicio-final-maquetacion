@@ -22,15 +22,15 @@
                 <span>+</span>
             </button>
             <div class="idioma">
-                <img src="language.png" alt="Cambiar idioma" class="idioma_img">
+                <img src="language.png" alt="Cambiar idioma" title="idioma" class="idioma_img">
             </div>
             <nav class="navbar">
                 <input type="checkbox" id="menu">
-                <label for="menu" id="label__menu"><i class="bi bi-list icono-menu"></i></label>
+                <label for="menu" ><i class="bi bi-list icono-menu"></i></label>
                 <ul class="navbar__menu">
                     <li ><a href="index.html">Home</a></li>
                     <li><a href="explorar.html">Explorar</a></li>
-                    <li class="active"><a href="registro.html">Registro</a></li>
+                    <li class="active"><a href="registro.html">Crear</a></li>
                     <li><a href="">Información</a></li>
                 </ul>
             </nav>
@@ -38,16 +38,17 @@
     </header>
 
     <section class="contenido form">
-        <h4 class="form__titulo">Registrarse</h4>
+        <h4 class="form__titulo">Crear Grupo</h4>
 
             <form action="" class="formulario">
                 <div class="formulario__input">
                     <label for="correo">Correo electrónico</label>
                     <input type="email" name="correo" id="correo">
+
                 </div>
 
                 <div class="formulario__input">
-                    <label for="fecha">Fecha de nacimiento</label>
+                    <label for="date">Creacion</label>
                     <input type="date" value="2025-02-09" name="date" id="date">
                 </div>
 
@@ -65,11 +66,57 @@
 
                 <div class="formulario__input">
                     <input type="checkbox" name="politica" id="politica">
-                    <label for="politica">Aceptar condiciones</label>
+                    <label for="politica" id="politicaFor">Aceptar condiciones</label>
                 </div>
 
                 <input type="submit" value="Enviar" class="btn btn-enviar">
             </form>
+    </section>
+
+    <div id="descubrir">
+        <p><a href="#grupos">¡Descubre más!</a></p>
+    </div>
+    <section id="grupos" href="#grupos">
+       <div class="before"><i class="bi bi-arrow-left"></i></div>
+       <div class="grupos">
+        <div class="grupos__grupo">
+            <div class="grupos__imagen"></div>
+            <div class="grupos__contenido">
+                <h3 class="grupos__titulo">Amigos</h3>
+                <p class="grupos__descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint itaque, ex ratione saepe sunt iste impedit minus.</p>
+                <p class="grupos__usuario">@Juanmadator</p>
+                <div class="grupo__btn"><a href="#">Regístrate</a></div>
+            </div>
+        </div>
+        <div class="grupos__grupo registro__grupo">
+            <div class="grupos__imagen"></div>
+            <div class="grupos__contenido">
+                <h3 class="grupos__titulo">Amigos</h3>
+                <p class="grupos__descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint itaque, ex ratione saepe sunt iste impedit minus.</p>
+                <p class="grupos__usuario">@Juanmadator</p>
+                <div class="grupo__btn"><a href="#">Regístrate</a></div>
+            </div>
+        </div>
+        <div class="grupos__grupo registro__grupo">
+            <div class="grupos__imagen"></div>
+            <div class="grupos__contenido">
+                <h3 class="grupos__titulo">Amigos</h3>
+                <p class="grupos__descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint itaque, ex ratione saepe sunt iste impedit minus.</p>
+                <p class="grupos__usuario">@Juanmadator</p>
+                <div class="grupo__btn"><a href="#">Regístrate</a></div>
+            </div>
+        </div>
+        <div class="grupos__grupo registro__grupo ">
+            <div class="grupos__imagen"></div>
+            <div class="grupos__contenido">
+                <h3 class="grupos__titulo">Amigos</h3>
+                <p class="grupos__descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint itaque, ex ratione saepe sunt iste impedit minus.</p>
+                <p class="grupos__usuario">@Juanmadator</p>
+                <div class="grupo__btn"><a href="#">Regístrate</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="after"><i class="bi bi-arrow-right"></i></div>
     </section>
 
     

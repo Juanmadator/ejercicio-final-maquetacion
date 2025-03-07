@@ -8,8 +8,9 @@
   --blanco: #fff;
   --morado: #7e63e9;
   --moradoPulsado: #917ee0;
-  --negri: rgb(0, 0, 0);
+  --negro: rgb(0, 0, 0);
   --grisClaro: lightgray;
+  --fuente: "Poppins";
 }
 
 * {
@@ -17,9 +18,10 @@
   margin: 0;
   box-sizing: border-box;
   /* agrego una fuente personalizada */
-  font-family: "Poppins";
+  font-family: var(--fuente);
 
   /* añado esta linea para la flecha que hace subir arriba del todo */
+  /* de esta forma es agradable el deslizamiento */
   scroll-behavior: smooth;
 }
 
@@ -65,7 +67,7 @@ h1 {
 
 h1 a {
   text-decoration: none;
-  color: black;
+  color: var(--negro);
 }
 
 /* Oculto el checkbox que activa el menu */
@@ -85,13 +87,10 @@ h1 a {
   top: 80px;
   right: 0;
   text-align: center;
-
-  
 }
 
-.navbar__menu li{
+.navbar__menu li {
   padding: 42px;
-
 }
 
 li {
@@ -132,7 +131,7 @@ li {
 
 .navbar__menu li a {
   text-decoration: none;
-  color: black;
+  color: var(--negro);
 }
 
 .navbar__menu li.active a {
@@ -288,8 +287,8 @@ li {
   padding: 10px;
 }
 
-.post .post__contenido{
-    justify-self: center;
+.post .post__contenido {
+  justify-self: center;
 }
 
 .post__flex:first-child {
@@ -458,89 +457,156 @@ li {
 /* FIN DE EXPLORAR.HTML */
 
 /* COMIENZO DE REGISTRO.HTML */
+/* Estilos generales del formulario */
 
-.form__titulo {
-  text-align: center;
-  padding: 20px;
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: white;
-  text-shadow: 3px 3px 1px black;
-}
-
-.formulario {
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  color: rgb(29, 8, 63);
-}
-
-.form {
-  max-width: 90%;
-  margin: 100px auto;
-  background: linear-gradient(50deg, var(--morado), var(--fondoIntenso));
-
-  border-radius: 10px;
-}
-
-.formulario__input {
-  display: flex;
-  flex-direction: column;
-
-  & input {
-    padding: 6px;
-    border: 2px solid rgb(184, 185, 190, 0.5);
-    border-radius: 8px;
-    outline: none;
-    background-color: var(--fondoIntenso);
-  }
-
-  & label {
-    font-size: 0.9rem;
-    color: black;
-    margin: 10px 0;
-  }
-}
-
-.formulario__input:nth-child(5) {
-  gap: 20px;
-  align-items: center;
-  flex-direction: row;
-}
-
-.passwordInput {
-  position: relative;
-}
-
-.ojo-visible {
+.before,
+.after {
+  background-color: var(--moradoPulsado);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   display: none;
 }
 
-.ojo-oculto,
-.ojo-visible {
+#grupos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+}
+
+.contenido.form {
+  max-width: 98%;
+  margin: auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #b7a7e6, #a386d4);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: 100px;
+}
+
+/* Título */
+.form__titulo {
+  font-size: 1.8rem;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+}
+
+/* Contenedor de cada input */
+.formulario__input {
+  position: relative;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Inputs */
+.formulario__input input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #c2a0fd;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s;
+  background: rgba(255, 255, 255, 0.8);
+  margin-bottom: 10px;
+}
+
+/* Estilo cuando el input tiene foco */
+.formulario__input input:focus {
+  border-color: #6a4bc3;
+  box-shadow: 0 0 5px rgba(106, 75, 195, 0.5);
+}
+
+/* Labels flotantes */
+.formulario__input label {
   position: absolute;
-  bottom: 8px;
-  right: 10px;
+  font-size: 16px;
+  color: #6546c9;
+  transition: 0.3s ease-in-out;
+  pointer-events: none;
+  left: 8px;
+  top: -26px;
 }
 
+#politicaFor {
+  top: 0px;
+  left: 20px;
+}
+
+/* Estilos específicos para el checkbox */
+.formulario__input input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+  accent-color: #6a4bc3;
+}
+
+/* Botón de enviar */
 .btn-enviar {
-  margin: 0 auto;
-  max-width: 250px;
-  margin-top: 20px;
-  border-radius: 6px;
-  transition: 0.3s all ease;
-  font-size: 0.9rem;
-  border: 2px solid var(--fondoIntenso);
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #6a4bc3, #9172ec);
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.btn-enviar:active {
-  background-color: #917ee0;
+/* Efecto hover en el botón */
+.btn-enviar:hover {
+  background: linear-gradient(135deg, #9172ec, #6a4bc3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Ícono de ojo para la contraseña */
+.passwordInput {
+  display: flex;
+  align-items: center;
+}
+
+.passwordInput i {
+  position: absolute;
+  right: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #6a4bc3;
+  top: 10px;
+}
+
+#descubrir {
+  margin-top: 50px;
+  width: 100%;
+  background-color: #b7a7e6;
+  text-align: center;
+}
+
+#descubrir p {
+  padding: 20px;
+
+  & a{
+    text-decoration: none;
+  color: var(--blanco);
+cursor: pointer;
+  }
 }
 
 /* COMIENZO DE MEDIA QUERIES PARA EL INDEX */
 
 @media screen and (min-width: 768px) {
+  .contenido.form {
+    max-width: 500px;
+    margin: 200px auto 100px auto;
+  }
+
+  .icono-menu {
+    display: none;
+  }
+
   #label__menu {
     display: none;
   }
@@ -625,8 +691,33 @@ li {
 }
 
 @media screen and (min-width: 1024px) {
+
+  .contenido__publicacion{
+    max-width: 600px;
+  }
+
+  .before,
+  .after {
+    display: grid;
+    place-items: center;
+    padding: 0;
+
+    transition: 3s background;
+    &:hover {
+      background: linear-gradient(135deg, #9172ec, #6a4bc3);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    & i {
+      width: 16px;
+      height: 33px;
+      color: var(--blanco);
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
   .global {
-    grid-template-columns: minmax(200px, 400px) 4fr minmax(200px, 400px);
+    grid-template-columns: minmax(200px, 250px) 10fr minmax(200px, 250px);
   }
   .anuncios {
     margin: 100px auto;
