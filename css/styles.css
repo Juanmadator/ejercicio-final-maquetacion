@@ -297,6 +297,10 @@ li {
 
 .usuarioFoto {
   line-height: 0;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  place-items: center;
+
 }
 .usuarioFoto__img {
   max-width: 100%;
@@ -457,8 +461,6 @@ li {
 /* FIN DE EXPLORAR.HTML */
 
 /* COMIENZO DE REGISTRO.HTML */
-/* Estilos generales del formulario */
-
 .before,
 .after {
   background-color: var(--moradoPulsado);
@@ -486,7 +488,6 @@ li {
   margin-top: 100px;
 }
 
-/* Título */
 .form__titulo {
   font-size: 1.8rem;
   color: #fff;
@@ -494,14 +495,12 @@ li {
   margin-bottom: 30px;
 }
 
-/* Contenedor de cada input */
 .formulario__input {
   position: relative;
   margin-bottom: 20px;
   text-align: left;
 }
 
-/* Inputs */
 .formulario__input input {
   width: 100%;
   padding: 12px;
@@ -514,13 +513,11 @@ li {
   margin-bottom: 10px;
 }
 
-/* Estilo cuando el input tiene foco */
 .formulario__input input:focus {
   border-color: #6a4bc3;
   box-shadow: 0 0 5px rgba(106, 75, 195, 0.5);
 }
 
-/* Labels flotantes */
 .formulario__input label {
   position: absolute;
   font-size: 16px;
@@ -536,14 +533,12 @@ li {
   left: 20px;
 }
 
-/* Estilos específicos para el checkbox */
 .formulario__input input[type="checkbox"] {
   width: auto;
   margin-right: 8px;
   accent-color: #6a4bc3;
 }
 
-/* Botón de enviar */
 .btn-enviar {
   width: 100%;
   padding: 12px;
@@ -557,13 +552,11 @@ li {
   transition: 0.3s;
 }
 
-/* Efecto hover en el botón */
 .btn-enviar:hover {
   background: linear-gradient(135deg, #9172ec, #6a4bc3);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Ícono de ojo para la contraseña */
 .passwordInput {
   display: flex;
   align-items: center;
@@ -663,7 +656,11 @@ cursor: pointer;
     & .post__contenido {
       justify-self: center;
     }
+
+   
   }
+
+
 
   /* MEDIA QUERIES PARA EXPLORAR.HTML */
 
@@ -717,7 +714,9 @@ cursor: pointer;
     }
   }
   .global {
-    grid-template-columns: minmax(200px, 250px) 10fr minmax(200px, 250px);
+    grid-template-columns: minmax(200px, 250px) minmax(500px, 800px) minmax(200px, 250px);
+    margin: 0 auto;
+    justify-content: center;
   }
   .anuncios {
     margin: 100px auto;
